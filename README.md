@@ -40,8 +40,8 @@ Web Apotek yang dibuat oleh <a href="https://github.com/judhacdc"> Judha Maygust
 1. **Clone Repository**
 
 ```bash
-git clone https://github.com/judhacdc/Proyek1_Apotek.git
-cd Laundry-Laravel-Vue
+git clone https://github.com/judhacdc/PWL_PROJECT.git
+cd PWL_PROJECT
 composer install
 npm install
 cp .env.example .env

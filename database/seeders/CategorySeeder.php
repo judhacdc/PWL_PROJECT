@@ -15,8 +15,10 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $category = [
-            ['nama' => 'obat',],
-            ['nama' => 'perlengkapan kesehatan',],
+            ['nama' => 'obat',
+            'slug' => 'obat'],
+            ['nama' => 'perlengkapan kesehatan',
+            'slug' => 'perkesatan'],
         ];
 
         DB::table('category')->insert($category);

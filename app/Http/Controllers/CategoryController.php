@@ -2,57 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
-use Cviebrock\EloquentSluggable\Services\SlugService;
 
-class CategoryController extends Controller
+class SupplierController extends Controller
 {
-        public function __construct()
-        {
-        $this->middleware('auth');
-        }
-
-    public function index()
+    public function __construct()
     {
-        $categories = Category::paginate(10);
-
-        return view('dashboard.category.index',[
-            'categories' => $categories
-        ]);
+    $this->middleware('auth');
     }
 
-    public function create(){
-        return view('dashboard.category.create');
-    }
+public function index()
+{
+    $categories = Category::paginate(10);
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nama' => 'required'
-        ]);
+    return view('dashboard.category.index',[
+        'categories' => $categories
+    ]);
+}
 
-        $category = new Category;
+public function create(){
+    return view('dashboard.category.create');
+}
 
-        $category->nama = $request->get('nama');
-        $category->slug = SlugService::createSlug(Category::class,'slug',$request->nama);
+public function store(Request $request)
+{
+    $request->validate([
+        'nama' => 'required'
+    ]);
 
-        $category->save();
+    $category = new Category;
 
-        return redirect()->route('category.index')->with('success','category Ditambahkan');
-    }
+    $category->nama = $request->get('nama');
+    $category->slug = SlugService::createSlug(Category::class,'slug',$request->nama);
 
-    public function delete($id){
-        $category = Category::where('id', $id)->first();
+    $category->save();
 
-        Category::find($category->id)->delete();
+    return redirect()->route('category.index')->with('success','category Ditambahkan');
+}
 
-        return redirect()->route('category.index')->with('success','Category berhasil dihapus');
-    }
+public function delete($id){
+    $category = Category::where('id', $id)->first();
 
-    // public function checkSlug(Request $request){
-    //     $slug = SlugService::createSlug(Post::class, 'slug',$request->nama);
-    //     return response()->json(['slug' => $slug]);
-    // }
+    Category::find($category->id)->delete();
 
+    return redirect()->route('category.index')->with('success','Category berhasil dihapus');
+}
 }

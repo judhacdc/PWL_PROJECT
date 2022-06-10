@@ -21,6 +21,7 @@ class ProductSeeder extends Seeder
             DB::table('product')->insert([
                 'user_id' => $faker->randomElement([1,2]),
                 'category_id' => $faker->randomElement([1,2]),
+                'supplier_id' => $faker->randomElement([1,2]),
                 'nama' => $faker->name(),
                 'description' => $faker->sentence(),
                 'harga' => $faker->numerify('######'),

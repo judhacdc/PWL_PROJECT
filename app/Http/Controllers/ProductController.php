@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Supplier;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -37,8 +38,10 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
+        $suppliers = Supplier::all();
         return view('dashboard.product.create',[
-            'categories' => $categories
+            'categories' => $categories,
+            'suppliers' => $suppliers
         ]);
     }
 
@@ -104,9 +107,11 @@ class ProductController extends Controller
     {
         $product = Product::where('id', $id)->first();
         $categories = Category::all();
+        $suppliers = Supplier::all();
         return view('dashboard.product.edit',[
             'product' => $product,
-            'categories' => $categories
+            'categories' => $categories,
+            'suppliers' => $suppliers
         ]);
     }
 

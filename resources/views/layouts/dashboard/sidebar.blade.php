@@ -36,6 +36,12 @@
                 <i class="fas fa-fw fa-box"></i>
                 <span>Category</span></a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('supplier.index') }}">
+                <i class="fas fa-fw fa-box"></i>
+                <span>Supplier</span></a>
+        </li>
         <!-- Nav Item - Dropshipper Menu -->
         {{-- <li class="nav-item">
             <a class="nav-link" href="dropshipper.html">

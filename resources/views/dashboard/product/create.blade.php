@@ -37,6 +37,17 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="category">Supplier</label>
+                    <select class="custom-select mr-sm-2  @error('supplier_id') is-invalid @enderror" id="supplier_id" name="supplier_id">
+                        @foreach ($suppliers as $supplier)
+                            @if(old('supplier_id') == $supplier->id)
+                                <option value="{{ $supplier->id }}" selected>{{ $supplier->nama }}</option>
+                            @endif
+                                <option value="{{ $supplier->id }}" selected>{{ $supplier->nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="harga">Harga</label>
                     <input type="number" name="harga" class="form-control @error('harga') is-invalid @enderror" required >
                     @error('harga')

@@ -13,18 +13,14 @@ class CreatePaymentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('payment', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('category');
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('product');
+            $table->unsignedBigInteger('orderdetail_id');
+            $table->foreign('orderdetail_id')->on('order_details')->references('id');
             $table->string('nama');
-            $table->integer('harga');
-            $table->integer('quantity');
-            $table->string('image')->nullable();
+            $table->string('bankasal');
+            $table->string('banktujuan');
+            $table->string('image');
             $table->timestamps();
         });
     }

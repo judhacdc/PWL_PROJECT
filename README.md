@@ -16,7 +16,7 @@ Web Apotek yang dibuat oleh <a href="https://github.com/judhacdc"> Judha Maygust
 
 ## Release Date
 
-**Release date : - - - **
+**Release date : 27 Juni 2022 **
 
 
 ---
@@ -25,12 +25,12 @@ Web Apotek yang dibuat oleh <a href="https://github.com/judhacdc"> Judha Maygust
 
 **Admin Default Account**
 
--   Username: admin
+-   Username: admin@mail.com
 -   Password: admin
 
 **Pegawai Default Account**
 
--   Username: pegawai
+-   Username: pegawai@mail.com
 -   Password: pegawai
 
 ---

@@ -16,7 +16,7 @@ Web Apotek yang dibuat oleh <a href="https://github.com/judhacdc"> Judha Maygust
 
 ## Release Date
 
-**Release date : 27 Juni 2022 **
+**Release date : 27 Juni 2022**
 
 
 ---

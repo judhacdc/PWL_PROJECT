@@ -6,6 +6,10 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">History Pembelian</h1>
+        <a href="{{ route('payment.cetak_pdf') }}" class="btn btn-success btn-xs"><i>Cetak pdf</i></a>
+
+
+
     </div>
 
     <!-- Content Row -->

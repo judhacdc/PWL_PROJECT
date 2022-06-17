@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\OrderDetail;
 use App\Models\Payment;
+use PDF;
 
 class OrderDetailController extends Controller
 {
@@ -63,5 +64,24 @@ class OrderDetailController extends Controller
         Payment::create($validatedData);
 
         return redirect()->route('payment.history')->with('success', 'Success Melakukan Pembayaran');
+    }
+    public function cetak_pdf(){
+
+        $users = OrderDetail::with('user')->where('user_id',Auth::user()->id)->get();
+        // dd($users);
+        $pdf = PDF::loadView('dashboard.user.historyPdf',[
+            'users' => $users
+        ]);
+        return $pdf->stream();
+    }
+
+    public function cetak_pdf_payment(){
+
+            $users = OrderDetail::with('user')->get();
+            // dd($users);
+            $pdf = PDF::loadView('dashboard.user.paymentPdf',[
+                'users' => $users
+            ]);
+            return $pdf->stream();
     }
 }

@@ -40,8 +40,10 @@ Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard.
 Route::prefix('dashboard')->group(function(){
     
     Route::get('/payment',[OrderDetailController::class,'checkUserPayment'])->middleware('adminKaryawan')->name('payment.check');
+    Route::get('/payment/cetak_pdf', [OrderDetailController::class, 'cetak_pdf_payment'])->middleware('adminKaryawan')->name('payment.cetak_pdf_payment');
     Route::put('/payment/{orderdetails:id}',[OrderDetailController::class,'changeStatusPayment'])->middleware('adminKaryawan')->name('payment.change');
     Route::get('/payment/order/{orderdetails:id}',[PaymentController::class,'show'])->middleware('adminKaryawan')->name('payment.showUser');
+    Route::get('/payment/history/cetak_pdf', [OrderDetailController::class, 'cetak_pdf'])->middleware('adminKaryawan')->name('payment.cetak_pdf');
     Route::get('/payment/history',[OrderDetailController::class,'userHistory'])->name('payment.history');
     Route::get('/payment/history/{orderdetails:id}',[OrderDetailController::class, 'createUploadPembayaran'])->name('payment.createpayment');
     Route::post('/payment/history/',[OrderDetailController::class, 'uploadPembayaran'])->middleware('adminKaryawan')->name('payment.uploadpayment');

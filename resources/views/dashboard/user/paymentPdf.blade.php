@@ -6,17 +6,11 @@
 </head>
 
 <body>
-    <style type="text/css">
-        table tr td,
-        table tr th {
-            font-size: 14pt;
-        }
-    </style>
     <center>
         <h2>Laporan Checkout</h4>
     </center>
 
-    <table class='table table-bordered'>
+    <table>
         <thead>
             <tr>
                 <th>No</th>
@@ -36,7 +30,20 @@
             @endforeach
         </tbody>
     </table>
-    
+    <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+        
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th {
+          height: 10px;
+        }
+        </style>
 </body>
 
 </html>
